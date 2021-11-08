@@ -1,0 +1,135 @@
+
+
+
+    <%- include('../parts/head') %> 
+
+    
+    <% switch (type) {
+
+      case "\"Client \"": %>
+            <%- include('../parts/menuClient') %>
+      <% break;
+
+      case "\"Gerant \"": %>
+        <%- include('../parts/menuGerant') %>
+      <% break;
+
+      case "\"Pointeur \"": %>
+        <%- include('../parts/menuPointeur') %>
+      <% break;
+
+      default: %>
+        <%- include('../parts/menuInscription') %>
+      <% break;
+  } %>
+
+  
+
+    <main id="main">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+          <div class="container">
+    
+            <div class="d-flex justify-content-between align-items-center">
+              <h2>Details de la demande</h2>
+              <ol>
+                <li><a href="/listDemande">Demande</a></li>
+                <li>Details</li>
+              </ol>
+            </div>
+    
+          </div>
+        </section><!-- End Breadcrumbs -->
+    
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="portfolio-details-container">
+    
+              <div class="owl-carousel portfolio-details-carousel">
+                <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
+              </div>
+    
+              <div class="portfolio-info">
+
+                <% for(var i=0; i < depot.length; i++){ %>
+
+                <h3><%= depot[i].mse %></h3>
+                <ul>
+                  <li><strong>Nombre</strong>: <%= depot[i].nbre %></li>
+                  <li><strong>Prix</strong>:  <%= depot[i].prix %> $</li>
+                  <li><strong>Cargaison</strong>:  <%= depot[i].cargaison %> </li>
+                  <li><strong>Client</strong>:  <%= agent[0].nom %> - <%= agent[0].prenom %></li>
+                  
+                  <li><strong>Date</strong>: 
+
+                    <% let date = new Date(depot[i].dateDemande) %> 
+                    
+                        <%= date.getDay() %> / <%= date.getMonth() %> / <%= date.getFullYear() %>
+
+                      </li>
+
+                  <li><strong>Provenace</strong>: <%= depot[i].provenance %></li>
+                  <li><strong>Destination</strong>: <%= depot[i].destination %></li>
+                  <li><strong>Etat de la demande</strong>: <span id="etatt"> <%= depot[i].etatDemande %></span></li>
+                </ul>
+                <% if( type != "\"Client \""){  %>
+                  <hr>
+
+                  <% if(type == "\"Pointeur \""){  %>
+
+                    <form method="post">
+              
+                      <h7 class="alert alert-info"> <%= msg %> </h7><br><br>
+
+                      <select name="etat" id="" class="form-control" required>
+                        <option value="">Modifier l'etat du produit</option>
+                        <option value="Retiré">Retirer</option>
+                      </select><br>
+                      <input type="submit" class="btn btn-warning col-lg-9">
+                      <input type="button" class="btn btn-success col-lg-2" value="R" id="refresh">
+                    </form>
+
+                  <% }else{%>
+
+                    <h7 class="alert alert-info"> Si vous voulez MOFIER l'état/ ou VOIR la nouvelle état || veuillez reinitialiser la page/ Ou encore reinitialisez l'Url, SVP... </h7><br><br>
+
+                  <% }%>
+
+                <% }%>
+
+              <% } %> 
+
+              </div>
+    
+            </div>
+    
+            <div class="portfolio-description">
+              <h2>Description du produit</h2>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
+            </div>
+    
+          </div>
+        </section><!-- End Portfolio Details Section -->
+    
+      </main><!-- End #main -->
+
+    <%- include('../parts/footer') %>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/session.js"></script>
+    <script src="/js/refreshMenu.js"></script>
+    <script src="/js/listDetail.js"></script>
+
+    <%- include('../parts/foot') %>

@@ -1,0 +1,74 @@
+
+
+
+    <%- include('../parts/head') %> 
+    <%- include('../parts/menuLogin') %>
+
+    
+    
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+  
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="section-title">
+            <h2>Login</h2>
+            <p>Connexion :</p>
+          </div>
+  
+  
+          <div class="row mt-5">
+            
+            
+
+            <!-- Form -->
+            <div class="col-lg-8 mt-5 mt-lg-0 offset-lg-2">
+  
+              <!-- Form -->
+              <form action="/login" method="post" >
+               
+                <div class="mb-3">
+                  <div class="alert alert-info text-center"> <%= rep %>  </div>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                  <input type="text" required class="form-control" name="email" placeholder="Email..." data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="password" required class="form-control" name="password" placeholder="Passworld..." data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+               
+                <div class="text-center"><button type="submit" class="btn btn-warning">Se connecter</button></div>
+              </form>
+
+              <% if (typeof userFind !== 'undefined'){ %>
+                <% for(var i = 0; i < userFind.length; i++ ){  %> 
+                <input type="hidden" id="idUser" value="<%= userFind[i]._id %> ">
+                <input type="hidden" id="typeUser" value="<%= userFind[i].type %> ">
+                <% } %>
+              <% } %>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+  
+
+
+    <%- include('../parts/footer') %>
+
+    <script src="/js/session.js"></script>
+    <script src="/js/login.js"></script>
+
+    <%- include('../parts/foot') %>

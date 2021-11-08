@@ -1,0 +1,43 @@
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">natfret<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about">A propos</a></li>
+
+          <li class="drop-down"><a href="">Demande</a>
+            <ul>
+              <!-- <li><a href="/listDemande">Toutes demandes</a></li> -->
+              <li><a href="/listDemande?url=Validé">Demande validé</a></li>
+              <li><a href="/listDemande?url=Stocké">Marchandise stockées</a></li>
+              <li><a href="/listDemande?url=Retiré">Marchandise retirées</a></li>
+              <!-- <li><a href="/listDemande">Retrait de marchandise</a></li> -->
+            </ul>
+          </li>
+
+          <li class="drop-down"><a href="">Utilisateur</a>
+            <ul>
+              <li><a href="/listAgent?url=Client">Clients</a></li>
+              <li><a href="/listAgent?url=Gerant">Gerant</a></li>
+              <li><a href="/listAgent?url=Pointeur">Pointeur</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="/login" class="get-started-btn scrollto">Se deconnecter</a>
+      <ul><li><a href="#"><%= type %> </a></li></ul>
+      <a href="#" id="R" class="btn btn-danger">Refresh</a>
+    </div>
+  </header><!-- End Header -->
+

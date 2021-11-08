@@ -1,0 +1,43 @@
+
+<a href="/teste2?url=kaszimodo">teste2</a>
+<p></p>
+
+<script src="/js/teste.js"></script>
+
+
+
+ <% if(type){  %>
+
+    <!-- Form -->
+    <form action="" method="post">
+      <div class="mb-3">
+      
+        <div class="loading alert alert-info text-center"> <%= msg %> </div>
+      </div>
+      <div class="form-group">
+        <input required type="text" class="form-control" name="mse"  placeholder="Marchandise..." id="mse"/>
+        <div class="validate"></div>
+      </div>
+      <div class="form-group">
+        <input required type="number" class="form-control" name="nbre"  placeholder="Nombre..." id="nbre" />
+        <div class="validate"></div>
+      </div>
+      <div class="form-group">
+        <input required type="text" class="form-control" name="provenance"  placeholder="Prevenance..." id="provenance"/>
+        <div class="validate"></div>
+      </div>
+      <div class="form-group">
+        <input required type="text" class="form-control" name="destination"  placeholder="Destination..." id="destination" />
+        <div class="validate"></div>
+      </div>
+      
+      <input type="hidden" name="idUser" id='idUser'>
+
+      
+      <div class="text-center"><button type="submit" class="btn btn-warning">Introduire</button></div>
+    </form>
+
+  <% }else{ %>
+    <div class="alert alert-info text-center"> Veuillez recharger la page, pour faire une nouvelle demande </div>
+  <% }   %>
+

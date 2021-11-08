@@ -1,0 +1,86 @@
+
+
+
+    <%- include('../parts/head') %> 
+
+    <% switch (type) {
+      case "\"Client \"": %>
+            <%- include('../parts/menuClient') %>
+      <% break;
+
+      case "\"Gerant \"": %>
+        <%- include('../parts/menuGerant') %>
+      <% break;
+
+      case "\"Pointeur \"": %>
+        <%- include('../parts/menuPointeur') %>
+      <% break;
+
+      default: %>
+        <%- include('../parts/menuInscription') %>
+      <% break;
+  } %>
+
+
+  
+  
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+          
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <div class="section-title">
+            <!-- <h2>Mes demandes</h2> -->
+            <h2>Toutes les demandes</h2>
+            <p>Demandes de dépot marchandise ( <%= url %> )</p>
+          </div>
+  
+          <div class="row">
+
+            <% for(var i = 0; i< data.length; i++){ %> 
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                  <h4><a href=""><%= data[i].mse %></a></h4>
+
+                  <div> <%= data[i].dateDemande %></div>
+                 
+                  <p>Etat de la demande : "<%= data[i].etatDemande %>"</p>
+
+                  <% if(type != "\"Pointeur \""){ %>
+                  <a href="/listDetail?idProduit=<%= data[i]._id %> " class="link">Voir plus</a> <br>
+                  <% } %>
+
+                  <% if(type == "\"Pointeur \""){ %>
+                    <a href="/postPointeur?idProduit=<%= data[i]._id %> " class="link">Stocker</a> \
+                    <a href="/retraitPointeur?idProduit=<%= data[i]._id %> " class="link">Retirer</a>
+                  <% } %>
+                  
+
+                </div>
+              </div>
+
+            <% } %> 
+  
+          </div>
+  
+        </div>
+      </section><!-- End Services Section -->
+  
+
+
+    <%- include('../parts/footer') %>
+     
+    <script src="/js/jquery.js"></script>
+    <script src="/js/refreshMenu.js"></script>
+    <script src="/js/session.js"></script>
+    <script src="/js/listDemande.js"></script>
+
+    <%- include('../parts/foot') %>

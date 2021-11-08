@@ -1,0 +1,80 @@
+
+
+
+
+    <%- include('../parts/head') %> 
+    
+    <% switch (type) {
+
+      case "\"Client \"": %>
+            <%- include('../parts/menuClient') %>
+      <% break;
+
+      case "\"Gerant \"": %>
+        <%- include('../parts/menuGerant') %>
+      <% break;
+
+      case "\"Pointeur \"": %>
+        <%- include('../parts/menuPointeur') %>
+      <% break;
+
+      default: %>
+        <%- include('../parts/menuInscription') %>
+      <% break;
+  } %>
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Team</h2>
+              <p>Les <%= url %>s</p>
+            </div>
+    
+            <div class="row">
+              <% for(var i = 0; i< agent.length; i++){ %> 
+              
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                  <div class="member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-img">
+                      <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                      <div class="social">
+                        <a href=""><i class="icofont-twitter"></i></a>
+                        <a href=""><i class="icofont-facebook"></i></a>
+                        <a href=""><i class="icofont-instagram"></i></a>
+                        <a href=""><i class="icofont-linkedin"></i></a>
+                      </div>
+                    </div>
+                    <div class="member-info">
+                      <h4> <%= agent[i].nom %> - <%= agent[i].prenom %> - <%= agent[i].postnom %></h4>
+                      <span><%= agent[i].email %> </span>
+                      <span><%= agent[i].numTel %> </span>
+                    </div>
+                  </div>
+                </div>
+
+              <% } %>
+    
+            </div>
+    
+          </div>
+      </section>
+      <!-- End Team Section -->
+    
+
+    <%- include('../parts/footer') %>
+    
+    <script src="/js/jquery.js"></script>
+    <script src="/js/session.js"></script>
+    <script src="/js/refreshMenu.js"></script>
+    <script src="/js/user.js"></script>
+
+    <%- include('../parts/foot') %>

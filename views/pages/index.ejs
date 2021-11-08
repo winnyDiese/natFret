@@ -1,0 +1,87 @@
+
+
+
+    <%- include('../parts/head') %>
+
+    <% switch (type) {
+      case "\"Client \"": %>
+            <%- include('../parts/menuClient') %>
+      <% break;
+
+      case "\"Gerant \"": %>
+        <%- include('../parts/menuGerant') %>
+      <% break;
+
+      case "\"Pointeur \"": %>
+        <%- include('../parts/menuPointeur') %>
+      <% break;
+
+      default: %>
+        <%- include('../parts/menuInscription') %>
+      <% break;
+  } %>
+
+  
+
+    <div id="principalMenu">
+
+    </div>
+
+    <!-- <form action="" method="post">
+      <input type="hidden" id="idUser" name="idUser">
+      <input type="hidden" id="typeUser" name="typeUser">
+    </form> -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Une Fret<span>.</span></h1>
+          <h2>Totalement Digitalisé</h2>
+        </div>
+      </div>
+
+      <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-xl-2 col-md-4 col-6">
+          <div class="icon-box">
+            <i class="ri-store-line"></i>
+            <h3><a href="">Notre siege</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 ">
+          <div class="icon-box">
+            <i class="ri-bar-chart-box-line"></i>
+            <h3><a href="">Notre histoire</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line"></i>
+            <h3><a href="">Notre mission</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
+          <div class="icon-box">
+            <i class="ri-paint-brush-line"></i>
+            <h3><a href="">Notre defis</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
+          <div class="icon-box">
+            <i class="ri-database-2-line"></i>
+            <h3><a href="">Notre Projet</a></h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Hero -->
+   
+  <%- include('../parts/foot') %>
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/refreshMenu.js"></script>
+  <script src="/js/index.js"></script>
